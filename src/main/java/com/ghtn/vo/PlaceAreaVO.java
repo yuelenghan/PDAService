@@ -7,6 +7,7 @@ public class PlaceAreaVO {
 
     private int id;
     private String name;
+    private String mainDeptId;
 
     public int getId() {
         return id;
@@ -22,5 +23,13 @@ public class PlaceAreaVO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMainDeptId() {
+        return mainDeptId;
+    }
+
+    public void setMainDeptId(String mainDeptId) {
+        this.mainDeptId = mainDeptId;
     }
 }

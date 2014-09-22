@@ -27,6 +27,12 @@ public class PlaceDaoHibernate extends GenericDaoHibernate<Place, Integer> imple
     }
 
     @Override
+    public List<Placeareas> getAllAreas() {
+        return getSession().createCriteria(Placeareas.class)
+                .addOrder(Order.asc("pareasid")).list();
+    }
+
+    @Override
     public List<Place> getPlace(int areaId) {
         return getSession().createCriteria(Place.class)
                 .add(Restrictions.eq("pareasid", areaId))

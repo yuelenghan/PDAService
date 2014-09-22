@@ -24,6 +24,12 @@ public class PlaceController extends BaseController {
         this.placeManager = placeManager;
     }
 
+    @RequestMapping("/allAreas")
+    @ResponseBody
+    public List<PlaceAreaVO> getAllAreas() {
+        return placeManager.getAllAreasOracleDataSource3();
+    }
+
     @RequestMapping("/areas")
     @ResponseBody
     public List<PlaceAreaVO> getAreas(String mainDeptId) {

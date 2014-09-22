@@ -12,5 +12,7 @@ public interface PlaceDao extends GenericDao<Place, Integer> {
 
     List<Placeareas> getAreas(String mainDeptId);
 
+    List<Placeareas> getAllAreas();
+
     List<Place> getPlace(int areaId);
 }

@@ -36,6 +36,7 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Integer> impleme
                 PlaceAreaVO vo = new PlaceAreaVO();
                 vo.setId(placeareas.getPareasid());
                 vo.setName(placeareas.getPareasname());
+                vo.setMainDeptId(placeareas.getMaindeptid());
 
                 returnList.add(vo);
             }
@@ -52,6 +53,23 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Integer> impleme
                 PlaceVO vo = new PlaceVO();
                 vo.setId(place.getPlaceid());
                 vo.setName(place.getPlacename());
+
+                returnList.add(vo);
+            }
+        }
+        return returnList;
+    }
+
+    @Override
+    public List<PlaceAreaVO> getAllAreasOracleDataSource3() {
+        List<Placeareas> list = placeDao.getAllAreas();
+        List<PlaceAreaVO> returnList = new ArrayList<>();
+        if (list != null && list.size() > 0) {
+            for (Placeareas placeareas : list) {
+                PlaceAreaVO vo = new PlaceAreaVO();
+                vo.setId(placeareas.getPareasid());
+                vo.setName(placeareas.getPareasname());
+                vo.setMainDeptId(placeareas.getMaindeptid());
 
                 returnList.add(vo);
             }

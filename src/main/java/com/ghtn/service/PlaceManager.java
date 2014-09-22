@@ -14,4 +14,6 @@ public interface PlaceManager extends GenericManager<Place, Integer> {
     List<PlaceAreaVO> getAreasOracleDataSource3(String mainDeptId);
 
     List<PlaceVO> getPlacesOracleDataSource3(int areaId);
+
+    List<PlaceAreaVO> getAllAreasOracleDataSource3();
 }
